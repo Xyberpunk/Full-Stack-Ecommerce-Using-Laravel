@@ -1,11 +1,15 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "rural/ecommerce-tshirts",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "Laravel ecommerce t-shirt store with storefront, account system, admin dashboard, and checkout flow.",
     "keywords": [
         "laravel",
-        "framework"
+        "ecommerce",
+        "store",
+        "tshirts",
+        "admin",
+        "checkout"
     ],
     "license": "MIT",
     "require": {
