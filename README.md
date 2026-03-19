@@ -200,13 +200,37 @@ stripe listen --forward-to localhost:8000/api/stripe/webhook
 
 ## Deployment Notes
 
-Before deployment:
+This repository is now prepared for a Vercel build configuration.
 
-- set production `.env` values
-- run migrations on the production database
-- run `php artisan storage:link`
-- set `APP_URL` to the deployed domain
-- rotate any previously exposed secret keys before going live
+### Vercel Deployment
+
+This repository includes [vercel.json](./vercel.json).
+
+#### Recommended Vercel settings
+
+1. Push the repository to GitHub
+2. Import the repository into Vercel
+3. Use the project root as the Vercel root directory
+4. Vercel should use:
+
+- Install Command: `npm install`
+- Build Command: `npm run build`
+- Output Directory: `public/build`
+
+5. Add the environment variables you need in Vercel:
+
+```env
+APP_URL=https://your-vercel-domain.vercel.app
+STRIPE_KEY=
+STRIPE_SECRET=
+STRIPE_WEBHOOK_SECRET=
+```
+
+6. Redeploy after environment changes.
+
+#### Important note
+
+The Vercel config in this repository is set up around the frontend asset build output in `public/build`.
 
 ## GitHub Checklist
 
